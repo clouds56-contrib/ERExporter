@@ -114,7 +114,7 @@ namespace ERExporter
             var ret = SFUtil.DecryptERRegulation(path);
             foreach (var file in ret.Files)
             {
-                var fileName = Path.GetFileName(file.Name);
+                var fileName = Path.GetFileName(file.Name.Replace("\\", "/"));
                 Console.WriteLine($"Unpacking {fileName}...");
 
                 var filePath = Path.Combine(destination, fileName);
